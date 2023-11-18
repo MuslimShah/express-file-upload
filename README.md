@@ -1,6 +1,6 @@
-# Your API Name
+# Express File Upload
 
-Brief description of your API.
+simple api which uploads a file to the server 
 
 ## Table of Contents
 - [Installation](#installation)
@@ -36,6 +36,12 @@ Allows users to upload an image to the server.
 #### Endpoint
 `POST /api/v1/`
 
+### Body
+"{
+    "name":"Mouse",
+    "price":400
+}"
+
 #### Description
 Creates a new product with name, price, and an associated image.
 
@@ -56,7 +62,8 @@ Retrieves a list of all products.
 - Successful response returns a status code and a list of products.
 
 ## API Routes
-- `POST /api/v1/uploads` - Upload an image.
+- `POST /api/v1/uploads` - Upload an image to the cloud -->link cloudnary.
+`POST /api/v1/localUpload` - Upload an image to the server.
 - `POST /api/v1/` - Create a product.
 - `GET /api/v1/` - Get all products.
 
