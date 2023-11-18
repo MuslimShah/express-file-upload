@@ -1,6 +1,6 @@
 # Express File Upload
 
-simple api which uploads a file to the server 
+simple API which shows how to upload file to the server and store its url as image in database
 
 ## Table of Contents
 - [Installation](#installation)
@@ -24,53 +24,49 @@ simple api which uploads a file to the server
 `POST /api/v1/uploads`
 
 #### Description
-Allows users to upload an image to the server.
+Allows users to upload an image to the cloud or locally.
 
 #### Request
 - The image should be included in the request body.
 
 #### Response
-- Successful response returns a status code and details about the uploaded image.
-
-### Creating a Product
-#### Endpoint
-`POST /api/v1/`
-
-### Body
-"{
-    "name":"Mouse",
-    "price":400
-}"
+```json
+{
+    "msg": "File Uploaded",
+    "src": "https://res.cloudinary.com/dgxkxujec/image/upload/v1700307758/file-upload-01/tmp-1-1700307754724_uehc9r.jpg"
+}
+```
+## Creating a Product
+### Endpoint
+`POST /api/v1/products`
 
 #### Description
 Creates a new product with name, price, and an associated image.
-
 #### Request
-- Include product details (name, price) and the image in the request body.
-
+```json
+{
+    "name": "Mouse",
+    "price": 400,
+    "image": "https://res.cloudinary.com/dgxkxujec/image/upload/v1700307758/file-upload-01/tmp-1-1700307754724_uehc9r.jpg"
+}
+```
 #### Response
-- Successful response returns a status code and details about the created product.
-
-### Getting All Products
-#### Endpoint
-`GET /api/v1/`
+```json
+{
+    "msg": "File uploaded successfully"
+}
+```
+## Getting All Products
+### Endpoint
+`GET /api/v1/products`
 
 #### Description
 Retrieves a list of all products.
 
 #### Response
-- Successful response returns a status code and a list of products.
-
-## API Routes
-- `POST /api/v1/uploads` - Upload an image to the cloud -->link cloudnary.
-`POST /api/v1/localUpload` - Upload an image to the server.
-- `POST /api/v1/` - Create a product.
-- `GET /api/v1/` - Get all products.
-
-## Example Requests
-
-### Uploading an Image
-```bash
-curl -X POST -H "Content-Type: multipart/form-data" -F "image=@path/to/your/image.jpg" http://localhost:3000/api/v1/uploads
-curl -X POST -H "Content-Type: application/json" -d '{"name":"Product Name","price":10.99,"image":"path/to/your/image.jpg"}' http://localhost:3000/api/v1/
-curl http://localhost:3000/api/v1/
+Successful response returns a status code and a list of products.
+### API Routes
+`POST /api/v1/products/uploads` - Upload an image.
+`POST /api/v1/products/localUpload` - same as above but upload to cloudnary.
+`POST /api/v1/products` - Create a product.
+`GET /api/v1/products` - Get all products.
