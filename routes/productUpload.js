@@ -1,6 +1,6 @@
 const express = require('express');
 const {createProduct,getAllProducts}=require('../contollers/product')
-const {uploadImage}=require('../contollers/uploadImage');
+const {uploadToCloud,uploadImageLocal}=require('../contollers/uploadImage');
 const router = express.Router();
 
 router.post('/',createProduct);
@@ -8,6 +8,7 @@ router.post('/',createProduct);
 router.get('/',getAllProducts);
 //upload image
 
-router.post('/uploads',uploadImage)
+router.post('/uploads',uploadToCloud);
+router.post('/uploadLocal',uploadImageLocal);
 
 module.exports = router;

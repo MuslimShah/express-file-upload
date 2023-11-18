@@ -1,29 +1,69 @@
+# Your API Name
 
-<h1>Express Starter Template with MVC Pattern</h1>
-<p>This is an Express starter template that implements the Model-View-Controller (MVC) pattern. It includes models, views, controllers, and custom error handlers to help you get started with building your web application quickly and easily.</p>
-<p>To use this template, you can clone this repository using Git:</p>
-<pre><code>git clone https://github.com/MuslimShah/express-stater-template.git</code></pre>
-<p>After cloning the repository, navigate to the project directory and install the dependencies using npm:</p>
-<pre><code>cd express-starter-template npm install</code></pre>
-<h2>Usage</h2>
-<p>To start the server, run the following command:</p>
-<pre><code>npm start</code></pre>
-<p>This will start the server on port 3000. You can access the server by navigating to <code>http://localhost:3000</code> in your web browser.</p>
+Brief description of your API.
 
-<h2>MVC Pattern</h2>
-<p>The MVC pattern is a popular design pattern used in web development. It separates the application into three interconnected components: the model, the view, and the controller.</p>
-<ul>
-	<li><strong>Model:</strong> Represents the data and business logic of the application.</li>
-	<li><strong>View:</strong> Represents the user interface of the application.</li>
-	<li><strong>Controller:</strong> Acts as an intermediary between the model and the view, handling user input and updating the model and view accordingly.</li>
-</ul>
-<p>In this template, the <code>models</code> directory contains the database schema and models. The <code>views</code> directory contains the HTML templates, while the <code>controllers</code> directory contains the logic for handling HTTP requests and responses.</p>
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Uploading an Image](#uploading-an-image)
+  - [Creating a Product](#creating-a-product)
+  - [Getting All Products](#getting-all-products)
+- [API Routes](#api-routes)
+- [Example Requests](#example-requests)
+- [Dependencies](#dependencies)
 
-<h2>Error Handlers</h2>
-<p>Error handling is an important aspect of building robust web applications. This template includes custom error handlers to help you handle errors gracefully.</p>
-<p>The <code>errorHandlers</code> directory contains custom error handlers for handling 404 and 500 errors. If a user navigates to a non-existent route, they will receive a 404 error. If there is an internal server error, they will receive a 500 error.</p>
+## Installation
+1. Clone the repository: `git clone https://github.com/yourusername/your-api.git`
+2. Install dependencies: `npm install`
+3. Start the server: `npm start`
 
-<h2>Contributing</h2>
-<p>Contributions are welcome! If you would like to contribute to this project, please open a pull request.</p>
+## Usage
 
+### Uploading an Image
+#### Endpoint
+`POST /api/v1/uploads`
 
+#### Description
+Allows users to upload an image to the server.
+
+#### Request
+- The image should be included in the request body.
+
+#### Response
+- Successful response returns a status code and details about the uploaded image.
+
+### Creating a Product
+#### Endpoint
+`POST /api/v1/`
+
+#### Description
+Creates a new product with name, price, and an associated image.
+
+#### Request
+- Include product details (name, price) and the image in the request body.
+
+#### Response
+- Successful response returns a status code and details about the created product.
+
+### Getting All Products
+#### Endpoint
+`GET /api/v1/`
+
+#### Description
+Retrieves a list of all products.
+
+#### Response
+- Successful response returns a status code and a list of products.
+
+## API Routes
+- `POST /api/v1/uploads` - Upload an image.
+- `POST /api/v1/` - Create a product.
+- `GET /api/v1/` - Get all products.
+
+## Example Requests
+
+### Uploading an Image
+```bash
+curl -X POST -H "Content-Type: multipart/form-data" -F "image=@path/to/your/image.jpg" http://localhost:3000/api/v1/uploads
+curl -X POST -H "Content-Type: application/json" -d '{"name":"Product Name","price":10.99,"image":"path/to/your/image.jpg"}' http://localhost:3000/api/v1/
+curl http://localhost:3000/api/v1/
