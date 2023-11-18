@@ -21,7 +21,7 @@ simple API which shows how to upload file to the server and store its url as ima
 
 ### Uploading an Image
 #### Endpoint
-`POST /api/v1/uploads`
+`POST /api/v1/products/uploads`
 
 #### Description
 Allows users to upload an image to the cloud or locally.
@@ -66,7 +66,7 @@ Retrieves a list of all products.
 #### Response
 Successful response returns a status code and a list of products.
 ### API Routes
-`POST /api/v1/products/uploads` - Upload an image.
-`POST /api/v1/products/localUpload` - same as above but upload to cloudnary.
-`POST /api/v1/products` - Create a product.
-`GET /api/v1/products` - Get all products.
+- `POST /api/v1/products/uploads` - Upload an image.
+- `POST /api/v1/products/localUpload` - same as above but upload to cloudnary.
+- `POST /api/v1/products` - Create a product.
+- `GET /api/v1/products` - Get all products.
