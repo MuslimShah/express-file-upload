@@ -10,7 +10,6 @@ simple API which shows how to upload file to the server and store its url as ima
   - [Getting All Products](#getting-all-products)
 - [API Routes](#api-routes)
 - [Example Requests](#example-requests)
-- [Dependencies](#dependencies)
 
 ## Installation
 1. Clone the repository: `git clone https://github.com/yourusername/your-api.git`
@@ -70,3 +69,19 @@ Successful response returns a status code and a list of products.
 - `POST /api/v1/products/localUpload` - same as above but upload to cloudnary.
 - `POST /api/v1/products` - Create a product.
 - `GET /api/v1/products` - Get all products.
+## Example Requests
+### Uploading an Image
+```bash
+curl -X POST -H "Content-Type: multipart/form-data" -F "image=@path/to/your/image.jpg" http://localhost:3000/api/v1/uploads"
+
+```
+### Creating a Product
+```bash
+curl -X POST -H "Content-Type: multipart/form-data" -F "image=@path/to/your/image.jpg" http://localhost:3000/api/v1/products"
+
+```
+
+### Getting All Products
+```bash
+curl http://localhost:3000/api/v1/products
+```
