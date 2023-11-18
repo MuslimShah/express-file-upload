@@ -22,7 +22,7 @@ app.use('/api/v1/products',productUploads);
 //page not found middleware
 app.use(pageNotFound);
 //error handler middleware
-// app.use(errorHandler);
+app.use(errorHandler);
 
 
 const start = async() => {
