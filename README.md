@@ -12,7 +12,7 @@ simple API which shows how to upload file to the server and store its url as ima
 - [Example Requests](#example-requests)
 
 ## Installation
-1. Clone the repository: `git clone https://github.com/yourusername/your-api.git`
+1. Clone the repository: `git@github.com:MuslimShah/express-file-upload.git`
 2. Install dependencies: `npm install`
 3. Start the server: `npm start`
 
